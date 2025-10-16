@@ -5,7 +5,7 @@ This section contains hands-on projects to apply DevOps concepts in real scenari
 | Project | Tools | Description | Link |
 |----------|--------|-------------|------|
 | Resource Usage Tracker | Bash, GitHub Actions | Track CPU/RAM usage and push metrics to GitHub | [View Repo](https://github.com/karangupta982/resourceUsageTracker) |
-| Dockerized WebApp | Docker, Node.js | Containerized application | — |
+| Dockerized WebApp | Docker, Node.js | Containerized application | [View Repo](https://github.com/karangupta982/ApniCoaching) |
 | CI/CD Pipeline | Jenkins / GitHub Actions | Build & deploy automation | — |
 | K8s Deployment | Kubernetes, Helm | Application orchestration | — |
 | Monitoring Stack | Prometheus, Grafana | Metrics collection and visualization | — |
