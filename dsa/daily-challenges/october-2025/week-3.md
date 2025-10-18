@@ -1,4 +1,4 @@
-````markdown
+
 # Date: 2025-10-18
 
 ## Problem
@@ -36,4 +36,4 @@ class Solution:
 
 ````
 
-````
+
