@@ -1,0 +1,36 @@
+# Date: 2025-10-18
+
+## Problem
+[LeetCode: Max Distinct Elements](https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations/description/?envType=daily-question&envId=2025-10-18)
+
+
+---
+
+## Code (Python)
+
+```python
+from typing import List
+
+class Solution:
+    def maxDistinctElements(self, nums: List[int], k: int) -> int:
+        maxi = float('-inf')
+        cnt = 0
+        nums.sort()
+        for num in nums:
+            r1 = num - k
+            r2 = num + k
+            if maxi < r1:
+                cnt += 1
+                maxi = r1
+            elif maxi >= r1 and maxi < r2:
+                cnt += 1
+                maxi += 1
+        return cnt
+````
+
+---
+
+## Time & Space Complexity
+
+* **Time Complexity:** `O(n log n)` (due to sorting)
+* **Space Complexity:** `O(1)`
