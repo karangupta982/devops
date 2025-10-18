@@ -4,13 +4,11 @@
 ## Problem
 [LeetCode: Max Distinct Elements](https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations/description/?envType=daily-question&envId=2025-10-18)
 
-
 ---
 
 ## Code (Python)
 
 ```python
-from typing import List
 
 class Solution:
     def maxDistinctElements(self, nums: List[int], k: int) -> int:
@@ -33,5 +31,9 @@ class Solution:
 
 ## Time & Space Complexity
 
-* **Time Complexity:** `O(n log n)` (due to sorting)
-* **Space Complexity:** `O(1)`
+* **Time Complexity:** O(n log n)
+* **Space Complexity:** O(1)
+
+````
+
+````
