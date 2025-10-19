@@ -1,7 +1,7 @@
-
 # Date: 2025-10-18
 
 ## Problem
+
 [LeetCode: Max Distinct Elements](https://leetcode.com/problems/maximum-number-of-distinct-elements-after-operations/description/?envType=daily-question&envId=2025-10-18)
 
 ---
@@ -9,7 +9,6 @@
 ## Code (Python)
 
 ```python
-
 class Solution:
     def maxDistinctElements(self, nums: List[int], k: int) -> int:
         maxi = float('-inf')
@@ -25,7 +24,7 @@ class Solution:
                 cnt += 1
                 maxi += 1
         return cnt
-````
+```
 
 ---
 
@@ -34,15 +33,12 @@ class Solution:
 * **Time Complexity:** O(n log n)
 * **Space Complexity:** O(1)
 
-````
-
-
 ---
-
 
 # Date: 2025-10-19
 
 ## Problem
+
 [LeetCode: 1625. Lexicographically Smallest String After Applying Operations](https://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations?envType=daily-question&envId=2025-10-19)
 
 ---
@@ -50,6 +46,7 @@ class Solution:
 ## Code (Python)
 
 ```python
+from collections import deque
 
 class Solution:
     def findLexSmallestString(self, s: str, a: int, b: int) -> str:
@@ -66,6 +63,7 @@ class Solution:
 
             ans = min(ans, t)
 
+            # Add operation: add 'a' to all odd indices
             arr = list(t)
             for i in range(1, n, 2):
                 arr[i] = str((int(arr[i]) + a) % 10)
@@ -74,12 +72,13 @@ class Solution:
             if added not in seen:
                 q.append(added)
 
+            # Rotate operation
             rotated = t[-b:] + t[:-b]
             if rotated not in seen:
                 q.append(rotated)
 
         return ans
-````
+```
 
 ---
 
@@ -88,4 +87,3 @@ class Solution:
 * **Time Complexity:** O(n × 10 × n) ≈ O(n²) — due to rotation and BFS traversal
 * **Space Complexity:** O(n × 10ⁿ) in worst case (all unique states)
 
-````
