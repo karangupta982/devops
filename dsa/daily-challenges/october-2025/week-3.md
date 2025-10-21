@@ -87,3 +87,52 @@ class Solution:
 * **Time Complexity:** O(n × 10 × n) ≈ O(n²) — due to rotation and BFS traversal
 * **Space Complexity:** O(n × 10ⁿ) in worst case (all unique states)
 
+---
+
+
+# Date: 2025-10-19
+
+## Problem
+
+[LeetCode:  3346. Maximum Frequency of an Element After Performing Operations I](https://leetcode.com/problems/maximum-frequency-of-an-element-after-performing-operations-i?envType=daily-question&envId=2025-10-21)
+
+---
+
+## Code (Python)
+
+```python
+
+class Solution:
+    def maxFrequency(self, nums: List[int], k: int, numOperations: int) -> int:
+        maxi = max(nums)
+        freq = [0]*(maxi+k+1)
+        n = maxi+k+1
+        for num in nums:
+            freq[num]+=1
+        for i in range(n):
+            freq[i] += freq[i-1]
+        
+        ans = 1
+        for target in range(1,n):
+            l = max(0,target-k-1)
+            r = min(n-1,target + k)
+            repeat = freq[target] - freq[target-1] 
+            diff = freq[r] - freq[l] - repeat
+            diff = min(diff, numOperations) 
+            ans = max(ans,diff+repeat)
+        
+        return ans
+
+```
+
+---
+
+## Time & Space Complexity
+
+* **Time Complexity:** O(n + maxi + k)
+* **Space Complexity:** O(maxi + k)
+
+
+
+
+        
